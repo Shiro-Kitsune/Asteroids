@@ -3,7 +3,7 @@
 class EnemyComponent : public Component
 {
 public:
-	EnemyComponent(int pointsWorth, const std::initializer_list<ItemType> & list);
+	EnemyComponent(int pointsWorth);
 	int GetPointsWorth() const;
 	ItemType GetLootType() const;
 private:
