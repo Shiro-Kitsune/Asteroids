@@ -113,7 +113,7 @@ Entity EntityFactory::CreateShip(const Vector2D & position)
 	entity.AddComponent(std::make_unique<HealthComponent>(5));
 	entity.AddComponent(std::make_unique<ShooterComponent>(FireType::Common, 1500.0f));
 	entity.AddComponent(std::make_unique<EnemyComponent>(15));
-	entity.AddComponent(std::make_unique<EnemyShipComponent>(150.0f, 15.0f, 100.0f, 200.0f, Color(0.8f, 0.4f, 0.4f)));
+	entity.AddComponent(std::make_unique<EnemyShipComponent>(150.0f, 15.0f, 50.0f, 200.0f, Color(0.8f, 0.4f, 0.4f)));
 	entity.AddComponent(std::make_unique<ExplodableComponent>());
 
 	return entity;
