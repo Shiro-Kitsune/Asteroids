@@ -91,7 +91,7 @@ Entity EntityFactory::CreateAsteroid(const Vector2D & position, const int size, 
 	entity.AddComponent(std::make_unique<BoundingCircle2D>(maxRadius, false));
 	entity.AddComponent(std::make_unique<RenderingComponent>(Color(1.000f, 0.843f, 0.000f), lines));
 	entity.AddComponent(std::make_unique<HealthComponent>(1));
-	entity.AddComponent(std::make_unique<EnemyComponent>(size * 5, std::initializer_list<ItemType>({ItemType::Mineral, ItemType::Heart})));
+	entity.AddComponent(std::make_unique<EnemyComponent>(size * 5));
 	entity.AddComponent(std::make_unique<AsteroidComponent>(size));
 
 	return entity;
@@ -112,7 +112,7 @@ Entity EntityFactory::CreateShip(const Vector2D & position)
 
 	entity.AddComponent(std::make_unique<HealthComponent>(5));
 	entity.AddComponent(std::make_unique<ShooterComponent>(FireType::Common, 1500.0f));
-	entity.AddComponent(std::make_unique<EnemyComponent>(15, std::initializer_list<ItemType>({ItemType::PowerUp, ItemType::Heart})));
+	entity.AddComponent(std::make_unique<EnemyComponent>(15));
 	entity.AddComponent(std::make_unique<EnemyShipComponent>(150.0f, 15.0f, 100.0f, 200.0f, Color(0.8f, 0.4f, 0.4f)));
 	entity.AddComponent(std::make_unique<ExplodableComponent>());
 
@@ -149,7 +149,7 @@ Entity EntityFactory::CreateRamShip(const Vector2D & position)
 
 	entity.AddComponent(std::make_unique<RenderingComponent>(Color(1.0f, 1.0f, 1.0f), lines));
 	entity.AddComponent(std::make_unique<HealthComponent>(3));
-	entity.AddComponent(std::make_unique<EnemyComponent>(15, std::initializer_list<ItemType>({ItemType::PowerUp, ItemType::Heart})));
+	entity.AddComponent(std::make_unique<EnemyComponent>(15));
 	entity.AddComponent(std::make_unique<RamShipComponent>(150.0f, 100.0f));
 	entity.AddComponent(std::make_unique<ExplodableComponent>());
 	return entity;
@@ -188,7 +188,7 @@ Entity EntityFactory::CreateBoss(const Vector2D & position)
 	entity.AddComponent(std::make_unique<RenderingComponent>(Color(0.647f, 0.165f, 0.165f), lines));
 	entity.AddComponent(std::make_unique<HealthComponent>(60));
 	entity.AddComponent(std::make_unique<ShooterComponent>(FireType::Boss, 1800.0f));
-	entity.AddComponent(std::make_unique<EnemyComponent>(20, std::initializer_list<ItemType>({ItemType::PowerUp, ItemType::Heart, ItemType::Mineral})));
+	entity.AddComponent(std::make_unique<EnemyComponent>(20));
 	entity.AddComponent(std::make_unique<ShieldUserComponent>(15000.0f, 4000.0f));
 	entity.AddComponent(std::make_unique<ExplodableComponent>());
 
