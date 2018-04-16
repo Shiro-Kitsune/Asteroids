@@ -21,7 +21,7 @@ Entity EntityFactory::CreatePlayer(int accelerateKeyCode, int shootKeyCode, int 
 
 	entity.AddComponent(std::make_unique<HealthComponent>(5));
 	entity.AddComponent(std::make_unique<ShooterComponent>(FireType::Common, 200.0f));
-	entity.AddComponent(std::make_unique<PlayerComponent>(5000.0f, 5.0f));
+	entity.AddComponent(std::make_unique<PlayerComponent>(10000.0f, 5.0f));
 	entity.AddComponent(std::make_unique<PlayerInputComponent>(accelerateKeyCode, shootKeyCode, rotateLeftKeyCode, rotateRightKeyCode, shieldKeyCode));
 	entity.AddComponent(std::make_unique<ShieldUserComponent>(15000.0f, 6000.0f));
 	entity.AddComponent(std::make_unique<ExplodableComponent>());
